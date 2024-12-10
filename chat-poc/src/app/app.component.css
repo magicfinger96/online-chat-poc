@@ -22,12 +22,4 @@
     flex: 1;
     background-color: #f7f5f5;
     overflow: auto;
-
-    .chat {
-        width: 350px;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        padding: 10px;
-    }
 }

@@ -3,9 +3,7 @@
   <img src="assets/images/banner.png" alt="image" />
 </div>
 <div class="content">
-  <div class="chat">
-    <app-talkjs-chat></app-talkjs-chat>
-  </div>
+  <app-talkjs-chat></app-talkjs-chat>
 </div>
 } @else {
   <app-authentication (authenticate)="onAuthentication($any($event))"></app-authentication>

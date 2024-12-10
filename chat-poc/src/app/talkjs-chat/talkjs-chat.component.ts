@@ -6,9 +6,7 @@ import Talk from 'talkjs';
   selector: 'app-talkjs-chat',
   standalone: true,
   imports: [],
-  template: `
-    <div id="talkjs-container" style="height: 600px">Loading chats..</div>
-  `,
+  template: '',
   styles: '',
 })
 export class TalkjsChatComponent {
@@ -25,9 +23,9 @@ export class TalkjsChatComponent {
       );
       conversation.setParticipant(me);
 
-      const chatbox = session.createChatbox();
-      chatbox.select(conversation);
-      chatbox.mount(document.getElementById('talkjs-container'));
+      const popup = session.createPopup();
+      popup.select(conversation);
+      popup.mount({ show: false });
     });
   }
 }
