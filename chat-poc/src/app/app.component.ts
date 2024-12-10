@@ -10,17 +10,11 @@ import { AuthenticationComponent } from './authentication/authentication.compone
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  private customerName!: String;
-  private isSupport!: boolean;
-
+  public isSupport!: boolean;
   public authenticated: boolean = false;
 
-  public onAuthentication(data: { isSupport: boolean, customerName: string}) {
-    this.customerName = data.customerName;
-    this.isSupport = data.isSupport;
-
-    if( this.isSupport || this.customerName){
-      this.authenticated = true;
-    }
+  public onAuthentication(isSupport: boolean) {
+    this.isSupport = isSupport;
+    this.authenticated = true;
   }
 }

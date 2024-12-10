@@ -9,13 +9,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './authentication.component.css',
 })
 export class AuthenticationComponent {
-  public customerName: string = "";
-  @Output() authenticate = new EventEmitter<{
-    isSupport: boolean;
-    customerName: string;
-  }>();
+  @Output() authenticate = new EventEmitter<boolean>();
 
   public onAuthentication(isSupport: boolean) {
-    this.authenticate.emit({ isSupport: isSupport, customerName: this.customerName});
+    this.authenticate.emit(isSupport);
   }
 }

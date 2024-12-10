@@ -2,17 +2,6 @@
   <div class="content">
     <div>Qui êtes vous ?</div>
     <div>→ <button (click)="onAuthentication(true)">Le support</button></div>
-    <div>
-      → Un client, mon nom est:
-      <input [(ngModel)]="customerName"
-        type="text"
-        id="name"
-        name="name"
-        required
-        minlength="4"
-        maxlength="8"
-        size="10"
-      /><button (click)="onAuthentication(false)">Valider</button>
-    </div>
+    <div>→ <button (click)="onAuthentication(false)">Un client</button></div>
   </div>
 </div>

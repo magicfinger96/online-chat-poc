@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import Talk from 'talkjs';
 
@@ -10,6 +10,9 @@ import Talk from 'talkjs';
   styles: '',
 })
 export class TalkjsChatComponent {
+
+  @Input() isSupport!: boolean;
+
   constructor() {
     Talk.ready.then((): void => {
       const me = new Talk.User('sample_user_alice');
