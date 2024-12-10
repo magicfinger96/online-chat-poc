@@ -1,0 +1,33 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    width: 100%;
+    height: 200px;
+    background-color: #dbdbdb;
+    position: sticky;
+    top: 0;
+    text-align: center;
+
+    img {
+        max-height: 100%;
+    }
+
+}
+
+.content {
+    flex: 1;
+    background-color: #f7f5f5;
+    overflow: auto;
+
+    .chat {
+        width: 350px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 10px;
+    }
+}

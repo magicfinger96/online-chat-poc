@@ -5,7 +5,7 @@ import { TalkjsChatComponent } from './talkjs-chat/talkjs-chat.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TalkjsChatComponent],
+  imports: [TalkjsChatComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
