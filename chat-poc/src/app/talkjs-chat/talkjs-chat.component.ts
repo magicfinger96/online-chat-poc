@@ -15,17 +15,29 @@ export class TalkjsChatComponent {
 
   constructor() {
     Talk.ready.then((): void => {
-      const me = new Talk.User('sample_user_alice');
+      const customer = new Talk.User('sample_user_alice');
+
+      const support = new Talk.User({
+        id: 'support',
+        name: 'Support',
+        email: 'support@example.com',
+        photoUrl: 'https://talkjs.com/new-web/avatar-7.jpg',
+        welcomeMessage: 'Hi, how can i help?',
+      });
+
+
+
       const session = new Talk.Session({
         appId: 't4HMEgPR',
-        me: me,
+        me: this.isSupport ? support : customer,
       });
 
       const conversation = session.getOrCreateConversation(
-        'sample_conversation'
+        'new_conversation'
       );
-      conversation.setParticipant(me);
-
+      conversation.setParticipant(customer);
+      conversation.setParticipant(support);
+    
       const popup = session.createPopup();
       popup.select(conversation);
       popup.mount({ show: false });
