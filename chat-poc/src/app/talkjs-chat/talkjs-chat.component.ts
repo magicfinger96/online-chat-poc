@@ -35,7 +35,7 @@ export class TalkjsChatComponent {
 
       // Create the session by picking who is the current user: support or customer.
       const session = new Talk.Session({
-        appId: 't4HMEgPR',
+        appId: '{YOUR_APP_ID}',
         me: this.isSupport ? support : customer,
       });
 
