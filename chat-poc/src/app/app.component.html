@@ -1,0 +1,10 @@
+@if(authenticated){
+<div class="header">
+  <img src="assets/images/banner.png" alt="image" />
+</div>
+<div class="content">
+  <app-talkjs-chat [isSupport]="isSupport"></app-talkjs-chat>
+</div>
+} @else {
+  <app-authentication (authenticate)="onAuthentication($any($event))"></app-authentication>
+}
