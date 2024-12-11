@@ -1,3 +1,5 @@
+(The SQL file is at the root of the project: [here](https://github.com/magicfinger96/online-chat-poc/blob/main/data.sql))
+
 # Instant messaging PoC
 ![image](https://github.com/user-attachments/assets/b4d7a8bc-8fdb-4e1d-8589-019cf603ed5b)
 This PoC is an instant messaging between the support and a customer.
