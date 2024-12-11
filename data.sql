@@ -1,11 +1,11 @@
 CREATE TABLE vehicle_category (
     letter CHAR(1) PRIMARY KEY NOT NULL,
-    value CHAR(100) NOT NULL
+    value CHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE vehicle_type (
     letter CHAR(1) PRIMARY KEY NOT NULL,
-    value CHAR(100) NOT NULL
+    value CHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE vehicle_transmission (
@@ -15,7 +15,7 @@ CREATE TABLE vehicle_transmission (
 
 CREATE TABLE vehicle_fuel (
     letter CHAR(1) PRIMARY KEY NOT NULL,
-    value CHAR(100) NOT NULL
+    value CHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE vehicle_group (
@@ -28,13 +28,14 @@ CREATE TABLE vehicle_group (
     FOREIGN KEY (category) REFERENCES vehicle_category(letter),
     FOREIGN KEY (type) REFERENCES vehicle_type(letter),
     FOREIGN KEY (transmission) REFERENCES vehicle_transmission(letter),
-    FOREIGN KEY (fuel) REFERENCES vehicle_fuel(letter)
+    FOREIGN KEY (fuel) REFERENCES vehicle_fuel(letter),
+    UNIQUE (category, type, transmission, fuel)
 );
 
 CREATE TABLE vehicle (
     id INT PRIMARY KEY AUTO_INCREMENT,
     vehicle_group_id INTEGER NOT NULL,
-    registration_number VARCHAR(200),
+    registration_number VARCHAR(200) UNIQUE,
     model VARCHAR(200),
     brand VARCHAR(200),
     FOREIGN KEY (vehicle_group_id) REFERENCES vehicle_group(id)
